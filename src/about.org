@@ -1,0 +1,69 @@
+#+TITLE:     About Bram
+#+AUTHOR:    Bram van der Kroef
+#+DATE:      2010-09-28 Tue
+#+DESCRIPTION: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+
+
+* About
+
+I am a programmer who lives in Fort Frances, Ontario. I have worked on web
+applications, network software and embedded systems. I'm a person that gets things
+done while having attention to detail. Passionate about programming, I keep up to
+date with the latest developments and enjoy new challenges. I take usability very
+seriously and  +never+ /usually don't/ write software without designing a spec,
+testing and writing documentation.
+
+Although I'm a bit quiet, I love being part of a team. Email me for references from
+previous employers.
+
+I have contributed to Emacs Emms and the OpenStreetMap.org map.
+
+* Skills
+ - Java
+ - C/C++
+ - PHP
+ - MySql
+ - Git
+ - jQuery
+ - Drupal
+ - Design Patterns
+ 
+* History
+ - School
+ - Internship
+ - Jobs
+
+My first run-in with programming was QBasic on my parents' old pre-386 computer running
+DOS. After experiencing the magic of printing text to the command line I was
+spending evenings scouring the documentation -- which is not easy when you are 12 and
+don't speak English -- and borrowing stacks of books from the library. You can view
+my very first finished program here.
+
+Years later I was studying for my bachelor's degree in Computer Science and
+discovering that math could actually be fun.
+
+* Networks
+ - Resume
+ - Email: bram@vanderkroef.net
+ - Phone: 000-00000
+ - [[http://www.delicious.com/bramvdk][Delicious]]
+ - StackOverflow
+ - [[http://twitter.com/bramvdkroef][Twitter]]
+ - [[http://www.amazon.com/gp/registry/wishlist/3OAPU9MK3CVID][Amazon Wishlist]]
+ - [[http://www.last.fm/user/bramvdk][Last.fm]]
+
+* Credits
+This website was build using free open-source software:
+- [[http://www.gnu.org/software/emacs][GNU Emacs]]
+- [[http://orgmode.org][Org-Mode]]
+- [[http://lesscss.org][LESS]]
+- [[http://gimp.org][The Gimp]]
+- [[http://jquery.com][jQuery]]
