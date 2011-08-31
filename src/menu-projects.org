@@ -1,0 +1,7 @@
+#+BEGIN_HTML
+<ul id="secondary-nav">
+  <li><a href="equations.html">Equations</a></li>
+  <li><a href="celticknots.html">Celtic Knots</a></li>
+  <li><a href="interpreter.html">Source Code Interpreter</a></li>
+</ul>
+#+END_HTML

@@ -1,0 +1,8 @@
+#+BEGIN_HTML
+<ul id="navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="files/curiculum_vitae.pdf">Resume</a></li>
+</ul>
+#+END_HTML

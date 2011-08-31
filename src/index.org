@@ -1,5 +1,17 @@
-#+TITLE Bram's Portfolio
+#+TITLE: Bram's Portfolio
+#+INCLUDE: menu.org
+ 
+This is the portfolio of Bram van der Kroef. Check out some of my
+work below and browse through the code on github. Or go to the About
+page to find more information about me.
 
+I have studied Computer Science and now work as a web developer. I
+have experience in Software Engineering, Network Programming, Embedded
+Software and Web Programming. Thank you for taking an interest in my
+portfolio.
 
-Welcome. This is the portfolio of a programmer. Check out some of my work
-below or go to the About page to find more information about me.
+* Projects
+ - [[file:equations.org][Equations]]
+ - [[file:celticknots.org][Celtic Knots]]
+ - [[file:interpreter.org][Source Code Interpreter]]
+

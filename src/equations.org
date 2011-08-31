@@ -1,0 +1,51 @@
+#+TITLE: Equations
+#+DESCRIPTION: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+INCLUDE: menu.org
+#+INCLUDE: menu-projects.org
+ 
+I wrote this to get a better understanding of algebra, and because I
+got annoyed with how particular calculators are about entering
+equations. The app takes math equations and tries to find the values
+for the variables in them. For example:
+
+#+BEGIN_EXAMPLE
+x = 10 * 5 / 2
+y * y + x = 100 
+z = a * 5
+#+END_EXAMPLE
+
+The entered problems are parsed into a parse tree and several classes
+try to reorder it to get the values for the variables they find. A
+list of variables with their values is presented to the user:
+
+#+CAPTION: The results for the entered equations.
+#+ATTR_HTML: alt="Screenshot of the eqations app."
+[[file:images/equations1.png]]
+
+* How To Get It
+It is written in Java so it requires a
+#+BEGIN_HTML
+<acronym title="Java Runtime Environment">JRE</acronym>.
+#+END_HTML 
+Most systems already have it installed but if you don't have it you
+can get it from [[http://www.java.com][Java.com]]. 
+
+Just download the .jar file and run it like you would any app. You can
+also run it from a terminal with this command:
+#+BEGIN_SRC sh
+java -jar equations.jar
+#+END_SRC
+
+* How To Use
+Enter any formulas and equations in the top text box and the results
+will be displayed in the bottom text box as you type.
+
+* Download
+- [[https://github.com/BramvdKroef/Equations][Source on Github]]
+- [[file:files/equations.jar][Compiled .jar]]

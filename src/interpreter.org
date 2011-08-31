@@ -1,0 +1,108 @@
+#+TITLE: Source code interpreter
+#+DESCRIPTION: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+INCLUDE: menu.org 
+#+INCLUDE: menu-projects.org
+ 
+This project parses a simple, math based code and executes it. It
+consists of a Tokenizer, Parser, Symbol table, a library that defines
+functions called from the code and a class that executes the parse
+tree.
+
+Here is an example:
+
+#+begin_src c 
+  -1 + 1 * 2 - 5 / (7 + 25)
+#+end_src
+
+Vectors and matrices are supported:
+
+#+begin_src c
+  1 2 3 + 3 2 1
+#+end_src
+
+A variable and a unary function (takes one argument, prefixed):
+
+#+begin_src c
+  x = 9 count
+#+end_src
+
+A binary function (takes two arguments, one on each side):
+
+#+begin_src c 
+  x2 = x reshape 3 3
+#+end_src
+
+A comparative function, that returns 1 or 0:
+
+#+begin_src c 
+  5 <= 3
+#+end_src
+
+New functions can be defined:
+
+#+begin_src math 
+  def unary increment (num) {
+    num + 1
+  } 
+  10 increment
+
+  def binary times(a b) {
+    tmp = a
+    tmp * b
+  }
+  10 times 6
+#+end_src
+
+Because this is was an assignment in university the code falls under
+the license of the university and can't be hosted on git hub. 
+
+* How to build
+
+Download the source and build it. A C++ compiler and make are
+required. 
+
+The Makefile is configured to use g++. If you use a different compiler
+you'll need to change the CC variable at the top of the Makefile. 
+
+To compile run:
+
+#+begin_src sh
+  make
+#+end_src
+
+And that's it. You will now have a binary called Interpreter.
+
+* How to run
+
+On the command line go to the directory where the Interpreter is and
+run:
+
+#+begin_src sh
+  Interpreter
+#+end_src
+
+The interpreter will ask you to enter some code and will execute each
+line as you enter it. Alternatively you can give it a file. The source
+includes an example file that you can use:
+
+#+begin_src sh
+  Interpreter example.txt
+#+end_src
+
+* List of functions
+
+Note that when functions meant to operate on scalars are given a
+vector or matrix they will operate on all elements inside it.
+
+
+
+* Download
+- [[file:files/interpreter.tar.bz2][Source Archive]]
+
+
