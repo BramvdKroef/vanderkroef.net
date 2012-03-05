@@ -9,16 +9,19 @@
 body {
     background-color: @bg_main;
     color: @fg_main;
+    margin-top: 0;
     #content {
         font-size: 1.5em;
     }
 }
 .site-title {
+    background: url(../images/blueprint.png) no-repeat 350px 0;
     color: @fg_sitename;
     font-family: Consolas, monospace;
     font-size: 2.4em;
-    padding-bottom: .5em;
+    padding: 15px .5em;
     border-bottom: .1em solid @border;
+    height: 50px;
 }
 
 h1 {
@@ -28,8 +31,8 @@ h1 {
     border-right: 1px solid @border;
     float: left;
     margin-top: .5em;
-    width: 470px;
-    padding-left: 30px;
+    width: 430px;
+    padding: 1.6em 0 0 30px;
 }
 
 a:active, a:focus {
@@ -45,6 +48,25 @@ a:active, a:focus {
     li {
         float: left;
         list-style-type: none;
+        padding: 32px 0 0 32px;
+    }
+    li.home{
+        background:url(../images/home-s.png) no-repeat
+    }
+    li.projects{
+        background:url(../images/projects-s.png) no-repeat
+    }
+    li.about{
+        background:url(../images/about-s.png) no-repeat
+    }
+    li.resume{
+        background:url(../images/resume-s.png) no-repeat
+    }
+    li a {
+        background-color: rgba(0, 0, 0, .7);
+        padding-left: .2em;
+        padding-top: .1em;
+        border-radius: 5px;
     }
 }
 #secondary-nav {
