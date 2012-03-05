@@ -29,8 +29,10 @@ with the latest developments and enjoy new challenges.
 * Connect
  - Email: [[mailto:bram@vanderkroef.net][bram@vanderkroef.net]]
  - Phone: (807) 486-1566
- - [[http://www.delicious.com/bramvdk][Delicious]]
  - [[http://twitter.com/bramvdkroef][Twitter]]
+ - [[https://github.com/BramvdKroef][GitHub]]
+ - [[http://www.linkedin.com/pub/bram-van-der-kroef/35/789/27][LinkedIn]]
+ - [[http://www.delicious.com/bramvdk][Delicious]]
  - [[http://www.last.fm/user/bramvdk][Last.fm]]
  - [[file:files/pub_bram_vanderkroef_net.gpg][Public Key]]
 * Credits
