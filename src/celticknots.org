@@ -11,7 +11,7 @@
 
 #+ATTR_HTML: alt="Example of a Celtic knot."
 [[file:images/knot1.png]]
-This app will let design your own celtic knot. It is a toy project
+This app will let design your own celtic knot. It is a project
 that I made when I found out about a simple way to draw them. It turned
 into an interesting exercise with Bézier curves.
 
@@ -22,7 +22,11 @@ interlacing can be turned on and off.
 The app is made by extending JComponent to make nodes that draw a
 line section. The nodes are laid out in a container using GridLayout.
 
-* How To Get It
+* Download
+- [[https://github.com/BramvdKroef/Celtic-Knots][Source on Github]]
+- [[file:files/celticknots.jar][Compiled .jar]]
+
+* Usage
 It is written in Java so it requires a
 #+BEGIN_HTML
 <acronym title="Java Runtime Environment">JRE</acronym>.
@@ -36,13 +40,12 @@ also run it from a terminal with this command:
 java -jar celticknots.jar
 #+END_SRC
 
-* How To Use
+#+CAPTION: Running the app.
+#+ATTR_HTML: alt="Screenshot of the Knot editor."
+[[file:images/knot2.png]]
+
 Click on two adjacent dots to break the lines that run between them. A
 dot will turn red when you click on it. When you click the next dot
 the lines running between the dots are broken. If you click on a dot
 that isn't adjacent to the first then that dot will turn red instead.
-
-* Download
-- [[https://github.com/BramvdKroef/Celtic-Knots][Source on Github]]
-- [[file:files/celticknots.jar][Compiled .jar]]
 
