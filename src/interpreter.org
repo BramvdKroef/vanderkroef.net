@@ -18,30 +18,37 @@ Here is an example:
 
 #+begin_src c 
   -1 + 1 * 2 - 5 / (7 + 25)
+  > 0.84375
 #+end_src
 
 Vectors and matrices are supported:
 
 #+begin_src c
   1 2 3 + 3 2 1
+  > 4 4 4 
 #+end_src
 
 A variable and a unary function (takes one argument, prefixed):
 
 #+begin_src c
   x = 9 count
+  > 1 2 3 4 5 6 7 8 9
 #+end_src
 
 A binary function (takes two arguments, one on each side):
 
 #+begin_src c 
   x2 = x reshape 3 3
+  > 1 2 3 
+    4 5 6 
+    7 8 9
 #+end_src
 
 A comparative function, that returns 1 or 0:
 
 #+begin_src c 
   5 <= 3
+  > 0
 #+end_src
 
 New functions can be defined:
@@ -51,18 +58,23 @@ New functions can be defined:
     num + 1
   } 
   10 increment
+  > 11
 
   def binary times(a b) {
     tmp = a
     tmp * b
   }
   10 times 6
+  > 60
 #+end_src
 
 Because this is was an assignment in university the code falls under
 the license of the university and can't be hosted on git hub. 
 
-* How to build
+* Download
+- [[file:files/interpreter.tar.bz2][Source Archive]]
+
+* Building
 
 Download the source and build it. A C++ compiler and make are
 required. 
@@ -78,7 +90,7 @@ To compile run:
 
 And that's it. You will now have a binary called Interpreter.
 
-* How to run
+* Usage
 
 On the command line go to the directory where the Interpreter is and
 run:
@@ -94,15 +106,4 @@ includes an example file that you can use:
 #+begin_src sh
   Interpreter example.txt
 #+end_src
-
-* List of functions
-
-Note that when functions meant to operate on scalars are given a
-vector or matrix they will operate on all elements inside it.
-
-
-
-* Download
-- [[file:files/interpreter.tar.bz2][Source Archive]]
-
 
