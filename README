@@ -16,6 +16,8 @@ To build the sources you will need the following:
  - Graphviz - to compile the diagrams in src/graphs/.
  - lessc - to compile .less source files to css. See http://lesscss.org
  - Emacs - including org-mode for converting the .org files to HTML.
+ - Imagemagick - for scaling the menu icon source pngs and combining
+   them into menu.png.
 
 * Building
 ==========

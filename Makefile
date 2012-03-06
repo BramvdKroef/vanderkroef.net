@@ -11,8 +11,15 @@ DOT = dot
 LESS = lessc
 EMACS = emacs -q --no-site-file
 RSYNC = rsync -vaz
+CONVERT = convert
 RM = rm
 RMDIR = rmdir
+
+# Icons for menu items
+MENUICONS = $(SRCDIR)/images/home.png \
+	$(SRCDIR)/images/projects.png \
+	$(SRCDIR)/images/about.png \
+	$(SRCDIR)/images/resume2.png 
 
 # List of output files.
 IMAGES = $(BLDDIR)/images \
@@ -92,6 +99,10 @@ $(BLDDIR)/files/curiculum_vitae.pdf : $(SRCDIR)/cv/curiculum_vitae.tex
 # Copy images
 $(BLDDIR)/images/% : $(SRCDIR)/images/%
 	$(COPY) $<  $@
+
+# Build menu.png from icon files.
+$(BLDDIR)/images/menu.png : $(MENUICONS)
+	$(CONVERT) $(MENUICONS) -scale 64x64 -append $@
 
 # Compile graphs with Graphviz
 $(BLDDIR)/images/%.png : $(SRCDIR)/graphs/%.dot
