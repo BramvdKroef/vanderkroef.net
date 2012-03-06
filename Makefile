@@ -16,6 +16,8 @@ RM = rm
 RMDIR = rmdir
 
 # Icons for menu items
+# source: http://freebiesbooth.com/hand-drawn-web-icons
+# mirror: http://www.iconfinder.com/search/?q=iconset%3AHand_Drawn_Web_Icon_Set
 MENUICONS = $(SRCDIR)/images/home.png \
 	$(SRCDIR)/images/projects.png \
 	$(SRCDIR)/images/about.png \
@@ -117,8 +119,8 @@ $(BLDDIR)/robot.txt : $(SRCDIR)/robot.txt
 	$(COPY) $< $@
 
 # Copy favicon.ico
-$(BLDDIR)/favicon.ico : $(SRCDIR)/favicon.ico
-	$(COPY) $< $@
+$(BLDDIR)/favicon.ico : $(SRCDIR)/images/favicon.png
+	$(CONVERT) $< -scale 32x32 $@
 
 # Cleanup build dir
 clean :
