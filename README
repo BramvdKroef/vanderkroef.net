@@ -1,0 +1,28 @@
+* Introduction
+==============
+
+These are the sources for building the website at
+http://www.vanderkroef.net. 
+
+* Requirements for building
+===========================
+
+To build the sources you will need the following:
+ - make - to build the sources.
+ - yuicompressor - for compressing the css files. You can replace this
+   with another minifier that uses the format 'minifier in.css -o
+   out.css'. Just run make with the argument 'CSSMINI=minifier'.
+ - pdflatex - to compile the latex source for the CV.
+ - Graphviz - to compile the diagrams in src/graphs/.
+ - lessc - to compile .less source files to css. See http://lesscss.org
+ - Emacs - including org-mode for converting the .org files to HTML.
+
+* Building
+==========
+
+In a terminal run make in the main directory. This will create the
+public_html directory containing all the files that make up the
+website.
+
+After building you can upload the files in the public_html directory
+to a web server. 
