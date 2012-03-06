@@ -1,7 +1,9 @@
 ;; This file is needed to build the .org files with org-mode.
 ;; To compile the org files run emacs in batch mode like so:
 ;;   emacs -q --no-site-file -batch -l build.el sourcefile.org
+
 (require 'org-publish)
+
 (let
     ((org-export-html-coding-system 'utf-8)
      (org-publish-use-timestamps-flag nil)
@@ -26,7 +28,8 @@
  projection\"/> 
 <![endif]-->
 <link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\"
- media=\"screen, projection\"/>"
+ media=\"screen, projection\"/>
+<link rel=\"shortcut icon\" href=\"/favicon.ico\" />"
                     :preamble "<div class=\"site-title\">Bram van der Kroef</div>"
                     :auto-postamble nil
                     :email "bram@vanderkroef.net")))
