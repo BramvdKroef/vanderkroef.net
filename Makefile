@@ -1,5 +1,7 @@
 SRCDIR = src
 BLDDIR = public_html
+# Path to public server (can be any path that rsync understands).
+PUBDIR = vanderkroef:
 
 # Toolbox
 COPY = cp
@@ -12,16 +14,10 @@ RSYNC = rsync -vaz
 RM = rm
 RMDIR = rmdir
 
-# Path to public server (can be a path to a SSH server).
-PUBDIR = vanderkroef:
-
 # List of output files.
 IMAGES = $(BLDDIR)/images \
 	$(BLDDIR)/images/blueprint.png \
-	$(BLDDIR)/images/home-s.png \
-	$(BLDDIR)/images/projects-s.png \
-	$(BLDDIR)/images/about-s.png \
-	$(BLDDIR)/images/resume-s.png \
+	$(BLDDIR)/images/menu.png \
 	$(BLDDIR)/images/knot1.png \
 	$(BLDDIR)/images/knot2.png \
 	$(BLDDIR)/images/equations1.png \
