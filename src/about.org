@@ -42,3 +42,6 @@ This website was build using free open-source software:
 - [[http://lesscss.org][LESS]]
 - [[http://gimp.org][The Gimp]]
 - LaTeX
+
+You can access the source files for this website on github @
+https://github.com/BramvdKroef/vanderkroef.net
