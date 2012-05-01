@@ -3,5 +3,6 @@
   <li><a href="equations.html">Equations</a></li>
   <li><a href="celticknots.html">Celtic Knots</a></li>
   <li><a href="interpreter.html">Source Code Interpreter</a></li>
+  <li><a href="clessc.html">C++ LESS Compiler</a></li>
 </ul>
 #+END_HTML
