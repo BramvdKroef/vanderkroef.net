@@ -56,7 +56,8 @@ ORGFILES = $(BLDDIR)/about.html \
 	$(BLDDIR)/equations.html \
 	$(BLDDIR)/index.html \
 	$(BLDDIR)/interpreter.html \
-	$(BLDDIR)/projects.html
+	$(BLDDIR)/projects.html \
+	$(BLDDIR)/clessc.html
 
 OTHER = $(BLDDIR)/robot.txt \
 	$(BLDDIR)/favicon.ico
@@ -94,7 +95,7 @@ $(BLDDIR)/css/%.css : $(SRCDIR)/css/%.css
 	$(CSSMINI) $< -o $@
 
 # Compile CV pdf from latex source.
-$(BLDDIR)/files/curiculum_vitae.pdf : $(SRCDIR)/cv/curiculum_vitae.tex
+$(BLDDIR)/files/curiculum_vitae.pdf : $(SRCDIR)/cv/curiculum_vitae.tex $(SRCDIR)/cv/res.cls
 	cd $(SRCDIR)/cv; \
 	$(LATEX) --output-directory ../../$(BLDDIR)/files curiculum_vitae.tex
 
