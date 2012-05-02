@@ -7,7 +7,6 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+INCLUDE: menu.org
-#+INCLUDE: menu-projects.org
 
 This is a implementation of the LESS compiler found on lesscss.org in
 C++. LESS is an extension for CSS that adds variables, nested rules,

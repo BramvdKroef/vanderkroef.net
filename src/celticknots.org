@@ -7,7 +7,6 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+INCLUDE: menu.org
-#+INCLUDE: menu-projects.org
 
 #+ATTR_HTML: alt="Example of a Celtic knot."
 [[file:images/knot1.png]]

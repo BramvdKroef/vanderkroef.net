@@ -7,7 +7,6 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+INCLUDE: menu.org 
-#+INCLUDE: menu-projects.org
  
 This project parses a simple, math based code and executes it. It
 consists of a Tokenizer, Parser, Symbol table, a library that defines

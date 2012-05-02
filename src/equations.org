@@ -7,7 +7,6 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+INCLUDE: menu.org
-#+INCLUDE: menu-projects.org
  
 I wrote this to get a better understanding of algebra, and because I
 got annoyed with how particular calculators are about entering

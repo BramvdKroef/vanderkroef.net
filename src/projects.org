@@ -7,7 +7,6 @@
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:nil toc:nil ltoc:nil
 #+INCLUDE: menu.org
-#+INCLUDE: menu-projects.org
 
 * [[file:equations.org][Equations]]
 * [[file:celticknots.org][Celtic Knots]]
