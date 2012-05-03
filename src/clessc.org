@@ -34,10 +34,10 @@ binary you just created before copying.
 To compile the LESS stylesheet stylesheet.less and write the resulting
 CSS to stylsheet.css run:
 
-#BEGIN_SRC sh
+#+BEGIN_SRC sh
 lessc stylesheet.less > stylesheet.css
-#END_SRC
+#+END_SRC
 or:
-#BEGIN_SRC sh
+#+BEGIN_SRC sh
 lessc stylesheet.less -o stylesheet.css
-#END_SRC
+#+END_SRC
