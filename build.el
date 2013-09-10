@@ -30,16 +30,16 @@
 <link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\"
  media=\"screen, projection\"/>
 <link rel=\"shortcut icon\" href=\"/favicon.ico\" />"
-                    :preamble "<div class=\"site-title\">Bram van der Kroef</div>"
+                    :html-preamble "Bram van der Kroef"
                     :auto-postamble nil
                     :email "bram@vanderkroef.net")))
+
   (if (not noninteractive)
       (error "This build file is to be used only with -batch"))
 
   (if command-line-args-left
-      (org-publish-file (car
-    command-line-args-left) project)
-    (error "Please specify a .org file argument" ))) 
-  
-
+      (org-publish-file (expand-file-name
+                         (car command-line-args-left))
+                        project)
+    (error "Please specify a .org file argument" )))
   
