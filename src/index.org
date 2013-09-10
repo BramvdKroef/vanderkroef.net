@@ -15,3 +15,4 @@ portfolio.
  - [[file:celticknots.org][Celtic Knots]]
  - [[file:interpreter.org][Source Code Interpreter]]
  - [[file:clessc.org][C++ LESS Compiler]]
+ - [[file:geneticalgorithm.org][Genetic Algorithm]]

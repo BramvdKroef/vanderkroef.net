@@ -36,7 +36,8 @@ IMAGES = $(BLDDIR)/images \
 	$(BLDDIR)/images/icons/pdf.png \
 	$(BLDDIR)/images/calc1.png \
 	$(BLDDIR)/images/calc2.png \
-	$(BLDDIR)/images/calc3.png
+	$(BLDDIR)/images/calc3.png \
+	$(BLDDIR)/images/map.svg 
 
 CSS = $(BLDDIR)/css \
 	$(BLDDIR)/css/style.css \
@@ -57,7 +58,8 @@ ORGFILES = $(BLDDIR)/about.html \
 	$(BLDDIR)/index.html \
 	$(BLDDIR)/interpreter.html \
 	$(BLDDIR)/projects.html \
-	$(BLDDIR)/clessc.html
+	$(BLDDIR)/clessc.html \
+	$(BLDDIR)/geneticalgorithm.html
 
 OTHER = $(BLDDIR)/robot.txt \
 	$(BLDDIR)/favicon.ico
