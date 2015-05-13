@@ -1,9 +1,9 @@
 
 // 100 = 50 + x ^ 2
 digraph calc {
-        graph [bgcolor="#101010",color="#A4A4A4"]
-        edge [color="#A4A4A4"]
-        node [shape=ellipse,width=.4,height=.4,color="#A4A4A4",fontcolor="#A4A4A4",fontsize=12,fixedsize=true]
+        graph [bgcolor="#FFFFFF",color="#4FA97B"]
+        edge [color="#4FA97B"]
+        node [shape=ellipse,width=.4,height=.4,color="#4FA97B",fontcolor="#333333",fontsize=12,fixedsize=true]
         100 -> equals
         50 -> plus -> equals
         x -> power -> plus

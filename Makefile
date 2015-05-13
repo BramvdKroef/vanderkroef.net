@@ -34,9 +34,9 @@ IMAGES = $(BLDDIR)/images \
 	$(BLDDIR)/images/icons/email.png \
 	$(BLDDIR)/images/icons/feed.png \
 	$(BLDDIR)/images/icons/pdf.png \
-	$(BLDDIR)/images/calc1.png \
-	$(BLDDIR)/images/calc2.png \
-	$(BLDDIR)/images/calc3.png \
+	$(BLDDIR)/images/calc1.svg \
+	$(BLDDIR)/images/calc2.svg \
+	$(BLDDIR)/images/calc3.svg \
 	$(BLDDIR)/images/map.svg 
 
 CSS = $(BLDDIR)/css \
@@ -52,7 +52,7 @@ FILES = $(BLDDIR)/files \
 	$(BLDDIR)/files/equations.jar \
 	$(BLDDIR)/files/pub_bram_vanderkroef_net.gpg 
 
-ORGFILES = $(BLDDIR)/about.html \
+CONTENT = $(BLDDIR)/about.html \
 	$(BLDDIR)/celticknots.html \
 	$(BLDDIR)/equations.html \
 	$(BLDDIR)/index.html \
@@ -64,9 +64,11 @@ ORGFILES = $(BLDDIR)/about.html \
 OTHER = $(BLDDIR)/robot.txt \
 	$(BLDDIR)/favicon.ico
 
+PUBLISHED_FILES = $(IMAGES) $(CSS) $(FILES) $(CONTENT) $(OTHER)
+
 all : build
 
-build : $(BLDDIR) $(IMAGES) $(GRAPHS) $(CSS) $(FILES) $(ORGFILES) $(OTHER)
+build : $(BLDDIR) $(PUBLISHED_FILES)
 
 # Create output directories.
 $(BLDDIR) :
@@ -110,8 +112,8 @@ $(BLDDIR)/images/menu.png : $(MENUICONS)
 	$(CONVERT) $(MENUICONS) -scale 64x64 -append $@
 
 # Compile graphs with Graphviz
-$(BLDDIR)/images/%.png : $(SRCDIR)/graphs/%.dot
-	$(DOT) -Tpng $<  -o $@
+$(BLDDIR)/images/%.svg : $(SRCDIR)/graphs/%.dot
+	$(DOT) -Tsvg $<  -o $@
 
 # Copy files
 $(BLDDIR)/files/% : $(SRCDIR)/files/% 

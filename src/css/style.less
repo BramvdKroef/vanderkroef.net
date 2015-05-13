@@ -1,9 +1,20 @@
+/*
 @bg_main: #101010;
 @bg_highlight: #212121;
 @fg_main: #A4A4A4;
 @fg_highlight: #4FA97B;
 @fg_header: #4FA97B;
 @fg_sitename: #FFF;
+*/
+@bg_main: #FFF;
+@bg_highlight: #F0F0F0;
+@bg_code: lighten(#4FA97B, 30%);
+@fg_main: #333;
+@fg_highlight: #4FA97B;
+@fg_header: #4FA97B;
+@fg_sitename: #333;
+@bg_menu-item: rgba(200, 200, 200, .8);
+
 @border: @fg_main;
 
 body {
@@ -14,11 +25,11 @@ body {
         font-size: 1.5em;
     }
 }
-.site-title {
+#preamble {
     background: url(../images/blueprint.png) no-repeat 350px 0;
     color: @fg_sitename;
     font-family: Consolas, monospace;
-    font-size: 2.4em;
+    font-size: 3.6em;
     padding: 15px .5em;
     border-bottom: .1em solid @border;
     height: 50px;
@@ -62,10 +73,13 @@ a:active, a:focus {
         background-position: 0 (-64px * 3);
     }
     li a {
-        background-color: rgba(0, 0, 0, .7);
+        background-color: @bg_menu-item;
         padding-left: .2em;
         padding-top: .1em;
         border-radius: 5px;
+        &:visited {
+            color: #36c;
+        }
     }
 }
 #secondary-nav {
@@ -96,13 +110,13 @@ a:active, a:focus {
     }
 }
 
-p, .outline-2, pre {
+p, .outline-2, pre, #postamble {
     width: 630px;
     clear: left;
     padding-left: 30px;
 }
 pre {
-    background-color: #000;
+    background-color: @bg_code;
 }
 
 .outline-2 {
@@ -114,5 +128,17 @@ pre {
     p, pre {
         width: auto;
         padding-left: 0;
+    }
+}
+
+#postamble {
+    border-top: 1px solid @bg_highlight;
+    padding-top: 1.6em;
+    text-align: right;
+    width: 630px;
+    
+    p {
+        margin: 0;
+        padding: 0;
     }
 }

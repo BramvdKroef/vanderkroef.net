@@ -35,11 +35,11 @@ that the variable is the only thing on one side of the equation.
 
 #+HTML: <div class="figure">
 #+ATTR_HTML: alt="Image of an equation parsed into a tree."
-[[file:images/calc1.png]]
+[[file:images/calc1.svg]]
 #+ATTR_HTML: alt="Image of an optimized version of the equation in the previous image."
-[[file:images/calc2.png]]
+[[file:images/calc2.svg]]
 #+ATTR_HTML: alt="Image of the optimized equation altered to show the value for x."
-[[file:images/calc3.png]]
+[[file:images/calc3.svg]]
 
 Example using the lines 'y = 20' and '5 * y = 50 + x * x'.
 

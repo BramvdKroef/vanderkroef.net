@@ -27,9 +27,12 @@ with the latest developments and enjoy new challenges.
  - Drupal
  
 * Connect
+  :PROPERTIES:
+  :HTML_CONTAINER_CLASS: section-connect
+  :END:
  - Email: [[mailto:bram@vanderkroef.net][bram@vanderkroef.net]]
  - LinkedIn: http://www.linkedin.com/pub/bram-van-der-kroef/35/789/27
- - Public Key:  [[file:files/pub_bram_vanderkroef_net.gpg][pub_bram_vanderkroef_net.gpg]]
+ - Public Key:  [[file:files/pub_bram_vanderkroef_net.gpg][pub\_bram\_vanderkroef\_net.gpg]]
  - Twitter: [[http://twitter.com/bramvdkroef][@bramvdkroef]]
  - GitHub: https://github.com/BramvdKroef
 
