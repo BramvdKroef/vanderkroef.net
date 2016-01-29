@@ -1,0 +1,215 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, letterpaper]{awesome-cv}
+
+% Configure page margins with geometry
+% \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-orange}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\name{Bram}{van der Kroef}
+\position{Software Engineer}
+\address{125 Third St. E Fort Frances, ON P9A 1P6}
+
+\mobile{(807)-276-7960} 
+\email{bram@vanderkroef.net}
+\homepage{www.vanderkroef.net}
+\github{BramvdKroef}
+\linkedin{bramvanderkroef}
+% \stackoverflow{SOid}{SOname}
+% \twitter{@twit}
+% \skype{skypeid}
+% \extrainfo{extra informations}
+
+%\quote{``Make the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Bram van der Kroef~~~·~~~Résumé}
+  {\thepage}
+
+
+  \cvsection{Skills}
+
+  \cvparagraph
+  Programming Languages: Java, C/C++, PHP, Python, Javascript.\\
+  Areas: Networks, Operating Systems, AI.\\
+  Operating Systems: Linux, Windows, OSX.\\
+  Other: Apache, MySQL, Drupal, jQuery, Git, Emacs, Eclipse.\\
+
+  \cvsection{Education}
+
+
+  %-------------------------------------------------------------------------------
+  %	CONTENT
+  %-------------------------------------------------------------------------------
+  \begin{cventries}
+
+    %---------------------------------------------------------
+    \cventry
+        {B.S. of Information and Communication Technology} % Degree
+        {Hogeschool van Amsterdam} % Institution
+        {Netherlands} % Location
+        {September 2003 to July 2007} % Date(s)
+        {
+          \begin{cvitems} % Description(s) bullet points
+          \item {Programming in Java and C/C++, system and network engineering,
+            embedded systems, software engineering, artificial intelligence,
+            project management and communication skills.}
+          \end{cvitems}
+        }
+
+        %---------------------------------------------------------
+  \end{cventries}
+
+
+  \cvsection{Experience}
+
+
+  %-------------------------------------------------------------------------------
+  %	CONTENT
+  %-------------------------------------------------------------------------------
+  \begin{cventries}
+
+    %---------------------------------------------------------
+    \cventry
+        {Programmer} % Job title
+        {Times Web Design} % Organization
+        {Fort Frances, ON} % Location
+        {April 1, 2008 to present} % Date(s)
+        {
+          \begin{cvitems} % Description(s) of tasks/responsibilities
+          \item {Developing custom Drupal modules and themes for client websites. Maintenance on websites using HTML, PHP, Javascript, jQuery, CSS, MySQL and Drupal.}
+          \item {Reduced time to install and configure a Drupal site (+ 
+            modules) from half hour to minutes by using Python to automate the 
+            process. Create Drupal themes in half the time it took 
+            before. Automated launching of a website from development to live 
+            server with Python and shell scripts.}
+          \item {Developing in-house software for keeping track of client
+            information, project progress and billing in a MySQL database.}
+          \item {Writing PHP software for the newspaper to manage subscriptions
+            and paper routes in a MySQL database.}
+          \item {Writing the software used in fishing tournaments for displaying
+            team ranks and weight of fish. Software is used at the Fort Frances
+            Canadian Bass Championship and the Emo Walleye Tournament.
+            PHP software on a webserver manages tournament data in a MySQL
+            database. Weights are entered through a web interface. Display
+            screens are transferred to client PC's with ajax; info about the
+            team on stage to the overhead projectors, notes to the MC on a
+            screen on stage, and a leader board to a large TV screen. The
+            screens are controlled with a JavaScript interface backstage.}
+          \end{cvitems}
+        }
+
+        %---------------------------------------------------------
+        \cventry
+            {Programmer} % Job title
+            {Celsius Benelux B.V.} % Organization
+            {Amersfoort, NL} % Location
+            {July 1, 2007 to August 30, 2007} % Date(s)
+            {
+              \begin{cvitems} % Description(s) of tasks/responsibilities
+              \item {The company installs building control systems that control
+                lighting, air conditioning, etc, in large buildings.
+                The Java tool I created lets engineers set up lighting controls in
+                buildings. The interface features blueprints of the floors on which
+                icons can be placed that correspond to lights. The icons can be
+                linked to sensors to turn them on and off and can be assigned to
+                groups to control multiple lights in a room as one.
+                The interface connects directly with the Java software on the
+                control system so changes take effect immediately.}
+              \end{cvitems}
+            }
+
+            %---------------------------------------------------------
+            \cventry
+                {Intern} % Job title
+                {Celsius Benelux B.V.} % Organization
+                {Amersfoort, NL} % Location
+                {February 5, 2007 to June 22, 2007} % Date(s)
+                {
+                  \begin{cvitems} % Description(s) of tasks/responsibilities
+                  \item {Created a Java application that generates manuals for
+                    custom building control systems. The tool queries the control system
+                    for equipment it controls and downloads documentation from the
+                    company's internal wiki. The documentation for all the equipment is
+                    assembled and a manual is generated in HTML, RTF (can be read in MS
+                    Word) and LateX.}
+                  \end{cvitems} 
+                }
+
+                %---------------------------------------------------------
+                \cventry
+                    {Intern} % Job title
+                    {Open Sesame ICT} % Organization
+                    {NL} % Location
+                    {September 1, 2005 to January 20, 2006} % Date(s)
+                    {
+                      \begin{cvitems} % Description(s) of tasks/responsibilities
+                      \item {Programmed in PHP, Javascript and Python.}
+                      \item {Developed features for the company's web based Content Management
+                        System and Document Management System products including: \\
+                        A module that converts MS Visio documents to web pages. \\
+                        A module that checks MySQL databases for corrupt tables. \\
+                        Drag \& drop for the web-based file manager. \\
+                        A module that checks an email account for new emails using IMAP
+                        and adds attachments to the Document Management System.}
+                      \end{cvitems}
+                    }
+
+                    %---------------------------------------------------------
+  \end{cventries}
+
+
+%-------------------------------------------------------------------------------
+\end{document}
