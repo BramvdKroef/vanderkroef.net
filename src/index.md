@@ -1,5 +1,4 @@
-#+TITLE: Bram's Portfolio
-#+INCLUDE: menu.org
+# Bram's Portfolio
  
 This is the portfolio of Bram van der Kroef. Check out some of my
 work below and browse through the code on github. Or go to the About
@@ -10,9 +9,9 @@ have experience in Software Engineering, Network Programming, Embedded
 Software and Web Programming. Thank you for taking an interest in my
 portfolio.
 
-* Projects
- - [[file:equations.org][Equations]]
- - [[file:celticknots.org][Celtic Knots]]
- - [[file:interpreter.org][Source Code Interpreter]]
- - [[file:clessc.org][C++ LESS Compiler]]
- - [[file:geneticalgorithm.org][Genetic Algorithm]]
+## Projects
+ * [Equations](/equations.html)
+ * [Celtic Knots](/celticknots.html)
+ * [Source Code Interpreter](/interpreter.html)
+ - [C++ LESS Compiler](/clessc.html)
+ - [Genetic Algorithm](/geneticalgorithm.html)

@@ -1,15 +1,7 @@
-#+TITLE: Celtic Knots
-#+DESCRIPTION: 
-#+LANGUAGE:  en
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+INFOJS_OPT: view:nil toc:nil ltoc:nil
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+INCLUDE: menu.org
+# Celtic Knots
 
-#+ATTR_HTML: alt="Example of a Celtic knot."
-[[file:images/knot1.png]]
+![Example of a Celtic knot.](/images/knot1.png)
+
 This app will let design your own celtic knot. It is a project
 that I made when I found out about a simple way to draw them. It turned
 into an interesting exercise with Bézier curves.
@@ -21,27 +13,23 @@ interlacing can be turned on and off.
 The app is made by extending JComponent to make nodes that draw a
 line section. The nodes are laid out in a container using GridLayout.
 
-* Download
-- [[https://github.com/BramvdKroef/Celtic-Knots][Source on Github]]
-- [[file:files/celticknots.jar][Compiled .jar]]
+## Download
+- [Source on Github](https://github.com/BramvdKroef/Celtic-Knots)
+- [Compiled .jar](/files/celticknots.jar)
 
-* Usage
-It is written in Java so it requires a
-#+BEGIN_HTML
-<acronym title="Java Runtime Environment">JRE</acronym>.
-#+END_HTML 
+## Usage
+It is written in Java so it requires a JRE
 Most systems already have it installed but if you don't have it you
-can get it from [[http://www.java.com][Java.com]]. 
+can get it from [Java.com](http://www.java.com). 
 
 Just download the .jar file and run it like you would any app. You can
 also run it from a terminal with this command:
-#+BEGIN_SRC sh
-java -jar celticknots.jar
-#+END_SRC
 
-#+CAPTION: Running the app.
-#+ATTR_HTML: alt="Screenshot of the Knot editor."
-[[file:images/knot2.png]]
+    java -jar celticknots.jar
+
+
+![Screenshot of the Knot editor.](/images/knot2.png)
+Running the app.
 
 Click on two adjacent dots to break the lines that run between them. A
 dot will turn red when you click on it. When you click the next dot

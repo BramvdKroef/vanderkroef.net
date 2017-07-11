@@ -1,0 +1,48 @@
+{{! 
+Template variables:
+title:         The page title
+author:        The author
+sitename:     The site name
+navigation:    Navigation links in the format:
+[
+{ url: '/page-url',
+title: 'Page title' }
+]
+}}<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <title>{{title}} – {{sitename}}</title>
+
+        <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta  name="author" content="{{author}}" />
+        <link rel="stylesheet" href="/css/screen.css"
+              type="text/css" media="screen, projection"/>
+        <link rel="stylesheet" href="/css/print.css" type="text/css"
+              media="print"/> 
+        <!--[if IE]>
+            <link rel="stylesheet" href="/css/ie.css" type="text/css"  media="screen,
+            projection"/> 
+        <![endif]-->
+        <link rel="stylesheet" href="/css/style.css" type="text/css"
+              media="screen, projection"/>
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </head>
+    <body>
+        <header id="preamble">
+            <div class="site-name">{{sitename}}</div>
+            <nav id="navigation">
+                <ul>
+                    {{#navigation}}
+                    <li><a href="{{url}}">{{title}}</a></li>
+                    {{/navigation}}
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="content">
+            {{{body}}}
+        </section>
+    </body>
+</html>

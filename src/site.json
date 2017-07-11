@@ -1,0 +1,11 @@
+{
+    "title": "",
+    "author": "Bram van der Kroef",
+    "sitename": "Bram van der Kroef",
+    "navigation" : [
+        { "url": "/", "title": "Home" },
+        { "url": "/projects.html", "title": "Projects" },
+        { "url": "/about.html", "title": "About" },
+        { "url": "/files/resume.pdf", "title": "Résumé" }
+    ]
+}

@@ -1,22 +1,14 @@
-#+TITLE: C++ LESS Compiler
-#+DESCRIPTION: 
-#+LANGUAGE:  en
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+INFOJS_OPT: view:nil toc:nil ltoc:nil
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+INCLUDE: menu.org
+# C++ LESS Compiler
 
 This is a implementation of the LESS compiler found on lesscss.org in
 C++. LESS is an extension for CSS that adds variables, nested rules,
 functions and operations to make style-sheets easier to write. The
 LESS code is compiled to CSS with a compiler such as this one.
 
-* Download
-- [[https://github.com/BramvdKroef/clessc][Source on Github]]
+## Download
+- [Source on Github](https://github.com/BramvdKroef/clessc)
 
-* Installation
+## Installation
 
 To compile just run 'make'. g++ or another c++ compiler is required. If
 you are using a compiler other than g++ you'll need to change the
@@ -29,15 +21,14 @@ Note that the original compiler is also named lessc. If you already
 have another LESS CSS compiler installed you should rename the lessc
 binary you just created before copying.
 
-* Usage
+## Usage
 
 To compile the LESS stylesheet stylesheet.less and write the resulting
 CSS to stylsheet.css run:
 
-#+BEGIN_SRC sh
-lessc stylesheet.less > stylesheet.css
-#+END_SRC
+    lessc stylesheet.less > stylesheet.css
+
 or:
-#+BEGIN_SRC sh
-lessc stylesheet.less -o stylesheet.css
-#+END_SRC
+
+    lessc stylesheet.less -o stylesheet.css
+

@@ -6,10 +6,9 @@ PUBDIR = vanderkroef:
 # Toolbox
 COPY = cp
 CSSMINI = yuicompressor
-LATEX = pdflatex
+LATEX = xelatex
 DOT = dot
 LESS = lessc
-EMACS = emacs -q --no-site-file
 RSYNC = rsync -vaz
 CONVERT = convert
 RM = rm
@@ -46,7 +45,7 @@ CSS = $(BLDDIR)/css \
 	$(BLDDIR)/css/ie.css
 
 FILES = $(BLDDIR)/files \
-	$(BLDDIR)/files/curiculum_vitae.pdf \
+	$(BLDDIR)/files/resume.pdf \
 	$(BLDDIR)/files/interpreter.tar.bz2 \
 	$(BLDDIR)/files/celticknots.jar \
 	$(BLDDIR)/files/equations.jar \
@@ -60,6 +59,8 @@ CONTENT = $(BLDDIR)/about.html \
 	$(BLDDIR)/projects.html \
 	$(BLDDIR)/clessc.html \
 	$(BLDDIR)/geneticalgorithm.html
+
+CONTENT_TEMPLATE=$(SRCDIR)/page-template.html 
 
 OTHER = $(BLDDIR)/robot.txt \
 	$(BLDDIR)/favicon.ico
@@ -86,9 +87,17 @@ $(BLDDIR)/css :
 $(BLDDIR)/files :
 	mkdir $(BLDDIR)/files
 
+$(SRCDIR)/%.yml : $(SRCDIR)/%.md $(SRCDIR)/site.json
+	cat $(SRCDIR)/site.json | jq \
+--arg title "$(shell grep '^# ' $< | cut -c 2-)" \
+--arg body "$(shell cmark $< | sed 's|\"|\\"|g')" \
+'.title = $$title|.body= $$body' > $@
+
+#'
+
 # Compile org-files to html
-$(BLDDIR)/%.html : $(SRCDIR)/%.org
-	$(EMACS) -batch -l build.el $<
+$(BLDDIR)/%.html : $(SRCDIR)/%.yml $(CONTENT_TEMPLATE)
+	mustache $< $(CONTENT_TEMPLATE) > $@
 
 # Compile css files
 $(BLDDIR)/css/%.css : $(SRCDIR)/css/%.less
@@ -99,9 +108,9 @@ $(BLDDIR)/css/%.css : $(SRCDIR)/css/%.css
 	$(CSSMINI) $< -o $@
 
 # Compile CV pdf from latex source.
-$(BLDDIR)/files/curiculum_vitae.pdf : $(SRCDIR)/cv/curiculum_vitae.tex $(SRCDIR)/cv/res.cls
+$(BLDDIR)/files/resume.pdf : $(SRCDIR)/cv/resume.tex $(SRCDIR)/cv/awesome-cv.cls
 	cd $(SRCDIR)/cv; \
-	$(LATEX) --output-directory ../../$(BLDDIR)/files curiculum_vitae.tex
+	$(LATEX) --output-directory ../../$(BLDDIR)/files resume.tex
 
 # Copy images
 $(BLDDIR)/images/% : $(SRCDIR)/images/%
