@@ -9,7 +9,7 @@ for the variables in them. For example:
     y * y + x = 100 
     z = a * 5
 
-[Screenshot of the eqations app.](/images/equations1.png)
+![Screenshot of the eqations app.](/images/equations1.png)
 The results for the entered equations.
 
 The entered problems are parsed into a parse tree. 
@@ -24,9 +24,9 @@ that the variable is the only thing on one side of the equation.
 
 <div class="figure">
 
-[Image of an equation parsed into a tree.](/images/calc1.svg)
-[Image of an optimized version of the equation in the previous image.](/images/calc2.svg)
-[Image of the optimized equation altered to show the value for x.](/images/calc3.svg)
+![Image of an equation parsed into a tree.](/images/calc1.svg)
+![Image of an optimized version of the equation in the previous image.](/images/calc2.svg)
+![Image of the optimized equation altered to show the value for x.](/images/calc3.svg)
 
 Example using the lines 'y = 20' and '5 * y = 50 + x * x'.
 

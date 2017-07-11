@@ -3,7 +3,7 @@
 This project tries to solve the Traveling Salesman Problem using a
 genetic algorithm.
 
-[path](/images/map.svg)
+![path](/images/map.svg)
 Three solutions the algorithm goes through to get to an optimal path.
 
 ## Download
