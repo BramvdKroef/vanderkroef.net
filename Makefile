@@ -6,13 +6,14 @@ PUBDIR = vanderkroef:
 # Toolbox
 COPY = cp
 CSSMINI = yuicompressor
-LATEX = xelatex
+LATEX = latexmk -xelatex -use-make -cd -f
 DOT = dot
 LESS = lessc
 RSYNC = rsync -vaz
 CONVERT = convert
-RM = rm
-RMDIR = rmdir
+
+SITE_DATA=$(SRCDIR)/site.json
+CONTENT_TEMPLATE=$(SRCDIR)/page-template.html 
 
 # Icons for menu items
 # source: http://freebiesbooth.com/hand-drawn-web-icons
@@ -23,72 +24,52 @@ MENUICONS = $(SRCDIR)/images/home.png \
 	$(SRCDIR)/images/resume2.png 
 
 # List of output files.
-IMAGES = $(BLDDIR)/images \
-	$(BLDDIR)/images/blueprint.png \
-	$(BLDDIR)/images/menu.png \
-	$(BLDDIR)/images/knot1.png \
-	$(BLDDIR)/images/knot2.png \
-	$(BLDDIR)/images/equations1.png \
-	$(BLDDIR)/images/icons \
-	$(BLDDIR)/images/icons/email.png \
-	$(BLDDIR)/images/icons/feed.png \
-	$(BLDDIR)/images/icons/pdf.png \
-	$(BLDDIR)/images/calc1.svg \
-	$(BLDDIR)/images/calc2.svg \
-	$(BLDDIR)/images/calc3.svg \
-	$(BLDDIR)/images/map.svg 
+IMAGES = $(SRCDIR)/images/blueprint.png \
+	$(SRCDIR)/images/menu.png \
+	$(SRCDIR)/images/knot1.png \
+	$(SRCDIR)/images/knot2.png \
+	$(SRCDIR)/images/equations1.png \
+	$(SRCDIR)/graphs/calc1.svg \
+	$(SRCDIR)/graphs/calc2.svg \
+	$(SRCDIR)/graphs/calc3.svg \
+	$(SRCDIR)/images/map.svg
 
-CSS = $(BLDDIR)/css \
-	$(BLDDIR)/css/style.css \
-	$(BLDDIR)/css/screen.css \
-	$(BLDDIR)/css/print.css \
-	$(BLDDIR)/css/ie.css
+ICONS =	$(SRCDIR)/images/icons/email.png \
+	$(SRCDIR)/images/icons/feed.png \
+	$(SRCDIR)/images/icons/pdf.png
 
-FILES = $(BLDDIR)/files \
-	$(BLDDIR)/files/resume.pdf \
-	$(BLDDIR)/files/interpreter.tar.bz2 \
-	$(BLDDIR)/files/celticknots.jar \
-	$(BLDDIR)/files/equations.jar \
-	$(BLDDIR)/files/pub_bram_vanderkroef_net.gpg 
+CSS =	$(SRCDIR)/css/style.css \
+	$(SRCDIR)/css/screen.css \
+	$(SRCDIR)/css/print.css \
+	$(SRCDIR)/css/ie.css
 
-CONTENT = $(BLDDIR)/about.html \
-	$(BLDDIR)/celticknots.html \
-	$(BLDDIR)/equations.html \
-	$(BLDDIR)/index.html \
-	$(BLDDIR)/interpreter.html \
-	$(BLDDIR)/projects.html \
-	$(BLDDIR)/clessc.html \
-	$(BLDDIR)/geneticalgorithm.html
+FILES = $(SRCDIR)/cv/resume.pdf \
+	$(SRCDIR)/files/interpreter.tar.bz2 \
+	$(SRCDIR)/files/celticknots.jar \
+	$(SRCDIR)/files/equations.jar \
+	$(SRCDIR)/files/pub_bram_vanderkroef_net.gpg 
 
-CONTENT_TEMPLATE=$(SRCDIR)/page-template.html 
+CONTENT = $(SRCDIR)/about.html \
+	$(SRCDIR)/celticknots.html \
+	$(SRCDIR)/equations.html \
+	$(SRCDIR)/index.html \
+	$(SRCDIR)/interpreter.html \
+	$(SRCDIR)/projects.html \
+	$(SRCDIR)/clessc.html \
+	$(SRCDIR)/geneticalgorithm.html
 
-OTHER = $(BLDDIR)/robot.txt \
-	$(BLDDIR)/favicon.ico
+
+OTHER = $(SRCDIR)/robot.txt \
+	$(SRCDIR)/images/favicon.ico
 
 PUBLISHED_FILES = $(IMAGES) $(CSS) $(FILES) $(CONTENT) $(OTHER)
 
 all : build
 
-build : $(BLDDIR) $(PUBLISHED_FILES)
+build : $(PUBLISHED_FILES)
 
-# Create output directories.
-$(BLDDIR) :
-	mkdir $(BLDDIR)
-
-$(BLDDIR)/images :
-	mkdir $(BLDDIR)/images
-
-$(BLDDIR)/images/icons :
-	mkdir $(BLDDIR)/images/icons
-
-$(BLDDIR)/css :
-	mkdir $(BLDDIR)/css
-
-$(BLDDIR)/files :
-	mkdir $(BLDDIR)/files
-
-$(SRCDIR)/%.yml : $(SRCDIR)/%.md $(SRCDIR)/site.json
-	cat $(SRCDIR)/site.json | jq \
+%.yml : %.md $(SITE_DATA)
+	cat $(SITE_DATA) | jq \
 --arg title "$(shell grep '^# ' $< | cut -c 2-)" \
 --arg body "$(shell cmark $< | sed 's|\"|\\"|g')" \
 '.title = $$title|.body= $$body' > $@
@@ -96,45 +77,40 @@ $(SRCDIR)/%.yml : $(SRCDIR)/%.md $(SRCDIR)/site.json
 #'
 
 # Compile org-files to html
-$(BLDDIR)/%.html : $(SRCDIR)/%.yml $(CONTENT_TEMPLATE)
+%.html : %.yml $(CONTENT_TEMPLATE)
 	mustache $< $(CONTENT_TEMPLATE) > $@
 
 # Compile css files
-$(BLDDIR)/css/%.css : $(SRCDIR)/css/%.less
+%.css : %.less
 	$(LESS) $< -o $@
 
-# Minify css files.
-$(BLDDIR)/css/%.css : $(SRCDIR)/css/%.css 
-	$(CSSMINI) $< -o $@
-
 # Compile CV pdf from latex source.
-$(BLDDIR)/files/resume.pdf : $(SRCDIR)/cv/resume.tex $(SRCDIR)/cv/awesome-cv.cls
-	cd $(SRCDIR)/cv; \
-	$(LATEX) --output-directory ../../$(BLDDIR)/files resume.tex
-
-# Copy images
-$(BLDDIR)/images/% : $(SRCDIR)/images/%
-	$(COPY) $<  $@
+%.pdf : %.tex $(SRCDIR)/cv/awesome-cv.cls
+	cd $(dir $<); \
+	$(LATEX) $(notdir $<)
 
 # Build menu.png from icon files.
-$(BLDDIR)/images/menu.png : $(MENUICONS)
+$(SRCDIR)/images/menu.png : $(MENUICONS)
 	$(CONVERT) $(MENUICONS) -scale 64x64 -append $@
 
 # Compile graphs with Graphviz
-$(BLDDIR)/images/%.svg : $(SRCDIR)/graphs/%.dot
+%.svg : %.dot
 	$(DOT) -Tsvg $<  -o $@
 
-# Copy files
-$(BLDDIR)/files/% : $(SRCDIR)/files/% 
-	$(COPY) $< $@
-
-# Copy robot.txt file.
-$(BLDDIR)/robot.txt : $(SRCDIR)/robot.txt
-	$(COPY) $< $@
-
 # Copy favicon.ico
-$(BLDDIR)/favicon.ico : $(SRCDIR)/images/favicon.png
+%.ico : %.png
 	$(CONVERT) $< -scale 32x32 $@
+
+# Create output directories.
+install :
+	install -d $(prefix)/images
+	install -d $(prefix)/images/icons
+	install -d $(prefix)/css
+	install -d $(prefix)/files
+	install $(CONTENT) $(prefix)
+	install $(IMAGES) $(prefix)/images/
+	install $(FILES) $(prefix)/files/
+	install $(OTHER) $(prefix)
 
 # Cleanup build dir
 clean :
