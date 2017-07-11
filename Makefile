@@ -1,5 +1,6 @@
 SRCDIR = src
-BLDDIR = public_html
+
+PREFIX=/srv/http
 # Path to public server (can be any path that rsync understands).
 PUBDIR = vanderkroef:
 
@@ -23,22 +24,29 @@ MENUICONS = $(SRCDIR)/images/home.png \
 	$(SRCDIR)/images/about.png \
 	$(SRCDIR)/images/resume2.png 
 
-# List of output files.
-IMAGES = $(SRCDIR)/images/blueprint.png \
+CONTENT = $(SRCDIR)/about.html \
+	$(SRCDIR)/celticknots.html \
+	$(SRCDIR)/clessc.html \
+	$(SRCDIR)/equations.html \
+	$(SRCDIR)/geneticalgorithm.html \
+	$(SRCDIR)/index.html \
+	$(SRCDIR)/interpreter.html \
+	$(SRCDIR)/projects.html
+
+IMAGES = $(SRCDIR)/graphs/calc1.svg \
+	$(SRCDIR)/graphs/calc2.svg \
+	$(SRCDIR)/graphs/calc3.svg \
 	$(SRCDIR)/images/menu.png \
+	$(SRCDIR)/images/blueprint.png \
 	$(SRCDIR)/images/knot1.png \
 	$(SRCDIR)/images/knot2.png \
 	$(SRCDIR)/images/equations1.png \
-	$(SRCDIR)/graphs/calc1.svg \
-	$(SRCDIR)/graphs/calc2.svg \
-	$(SRCDIR)/graphs/calc3.svg \
-	$(SRCDIR)/images/map.svg
-
-ICONS =	$(SRCDIR)/images/icons/email.png \
+	$(SRCDIR)/images/map.svg \
+	$(SRCDIR)/images/icons/email.png \
 	$(SRCDIR)/images/icons/feed.png \
-	$(SRCDIR)/images/icons/pdf.png
+	$(SRCDIR)/images/icons/pdf.png 
 
-CSS =	$(SRCDIR)/css/style.css \
+CSS = 	$(SRCDIR)/css/style.css \
 	$(SRCDIR)/css/screen.css \
 	$(SRCDIR)/css/print.css \
 	$(SRCDIR)/css/ie.css
@@ -49,22 +57,21 @@ FILES = $(SRCDIR)/cv/resume.pdf \
 	$(SRCDIR)/files/equations.jar \
 	$(SRCDIR)/files/pub_bram_vanderkroef_net.gpg 
 
-CONTENT = $(SRCDIR)/about.html \
-	$(SRCDIR)/celticknots.html \
-	$(SRCDIR)/equations.html \
-	$(SRCDIR)/index.html \
-	$(SRCDIR)/interpreter.html \
-	$(SRCDIR)/projects.html \
-	$(SRCDIR)/clessc.html \
-	$(SRCDIR)/geneticalgorithm.html
-
-
 OTHER = $(SRCDIR)/robot.txt \
 	$(SRCDIR)/images/favicon.ico
 
-PUBLISHED_FILES = $(IMAGES) $(CSS) $(FILES) $(CONTENT) $(OTHER)
+BUILD_FILES = $(CONTENT) \
+	$(SRCDIR)/graphs/calc1.svg \
+	$(SRCDIR)/graphs/calc2.svg \
+	$(SRCDIR)/graphs/calc3.svg \
+	$(SRCDIR)/images/menu.png \
+	$(SRCDIR)/css/style.css \
+	$(SRCDIR)/cv/resume.pdf \
+	$(SRCDIR)/images/favicon.ico
 
-all : build
+PUBLISHED_FILES = $(CONTENT) $(IMAGES) $(CSS) $(FILES) $(OTHER)
+
+.PHONY: all build install clean publish
 
 build : $(PUBLISHED_FILES)
 
@@ -102,29 +109,32 @@ $(SRCDIR)/images/menu.png : $(MENUICONS)
 	$(CONVERT) $< -scale 32x32 $@
 
 # Create output directories.
-install :
-	install -d $(prefix)/images
-	install -d $(prefix)/images/icons
-	install -d $(prefix)/css
-	install -d $(prefix)/files
-	install $(CONTENT) $(prefix)
-	install $(IMAGES) $(prefix)/images/
-	install $(FILES) $(prefix)/files/
-	install $(OTHER) $(prefix)
+install : $(PUBLISHED_FILES)
+	install -d $(DESTDIR)$(PREFIX)/vanderkroef.net/images
+	install -d $(DESTDIR)$(PREFIX)/vanderkroef.net/css
+	install -d $(DESTDIR)$(PREFIX)/vanderkroef.net/files
+	install $(CONTENT) $(DESTDIR)$(PREFIX)/vanderkroef.net/
+	install $(IMAGES)  $(DESTDIR)$(PREFIX)/vanderkroef.net/images/
+	install $(CSS)     $(DESTDIR)$(PREFIX)/vanderkroef.net/css/
+	install $(FILES)   $(DESTDIR)$(PREFIX)/vanderkroef.net/files/
+	install $(OTHER)   $(DESTDIR)$(PREFIX)/vanderkroef.net/
+
+uninstall :
+	$(DESTDIR)$(PREFIX)/vanderkroef.net/*.html
+	$(DESTDIR)$(PREFIX)/vanderkroef.net/images/*
+	$(DESTDIR)$(PREFIX)/vanderkroef.net/css/*.css
+	$(DESTDIR)$(PREFIX)/vanderkroef.net/files/*
+	$(DESTDIR)$(PREFIX)/vanderkroef.net/{robots.txt,favicon.ico}
+	rmdir $(DESTDIR)$(PREFIX)/vanderkroef.net/images/
+	rmdir $(DESTDIR)$(PREFIX)/vanderkroef.net/css/
+	rmdir $(DESTDIR)$(PREFIX)/vanderkroef.net/files/
+	rmdir $(DESTDIR)$(PREFIX)/vanderkroef.net/
 
 # Cleanup build dir
 clean :
-	$(RM) $(BLDDIR)/images/icons/*
-	$(RMDIR) $(BLDDIR)/images/icons
-	$(RM) $(BLDDIR)/images/*
-	$(RMDIR) $(BLDDIR)/images
-	$(RM) $(BLDDIR)/css/*
-	$(RMDIR) $(BLDDIR)/css
-	$(RM) $(BLDDIR)/files/*
-	$(RMDIR) $(BLDDIR)/files
-	$(RM) $(BLDDIR)/*
-	$(RMDIR) $(BLDDIR)
+	rm $(BUILD_FILES)
+	latexmk -CA	
 
 # publish build dir to server
-publish : build
-	$(RSYNC) $(BLDDIR)/ $(PUBDIR)
+#publish : build
+#	$(RSYNC) $(BLDDIR)/ $(PUBDIR)
