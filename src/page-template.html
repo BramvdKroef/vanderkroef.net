@@ -1,14 +1,4 @@
-{{! 
-Template variables:
-title:         The page title
-author:        The author
-sitename:     The site name
-navigation:    Navigation links in the format:
-[
-{ url: '/page-url',
-title: 'Page title' }
-]
-}}<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -33,16 +23,25 @@ title: 'Page title' }
         <header id="preamble">
             <div class="site-name">{{sitename}}</div>
             <nav id="navigation">
-                <ul>
-                    {{#navigation}}
-                    <li><a href="{{url}}">{{title}}</a></li>
-                    {{/navigation}}
-                </ul>
+              <ul>
+                <li><a href="mailto:bram@vanderkroef.net">bram@vanderkroef.net</a></li>
+                <li><a href="/files/resume.pdf">Résumé</a></li>
+              </ul>
             </nav>
         </header>
         
         <section id="content">
-            {{{body}}}
+          <p>I am a full-stack developer who lives in Fort Frances, Ontario. My
+            work includes module/plugin and theme development for
+            Drupal and Wordpress sites. I have built over a hundred
+            websites using Drupal and Wordpress.  I develop and
+            maintain Web applications using technologies such as PHP,
+            Python, MySQL, jQuery, CakePHP. I also have a background
+            in network programming and operating systems.</p>
+
+          <p>Check out some of my work below and browse through the
+            code on github.</p>
+          
         </section>
     </body>
 </html>
