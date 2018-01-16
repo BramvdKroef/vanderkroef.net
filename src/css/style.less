@@ -1,21 +1,14 @@
-/*
-@bg_main: #101010;
-@bg_highlight: #212121;
-@fg_main: #A4A4A4;
-@fg_highlight: #4FA97B;
-@fg_header: #4FA97B;
-@fg_sitename: #FFF;
-*/
-@bg_main: #FFF;
-@bg_highlight: #F0F0F0;
-@bg_code: lighten(#4FA97B, 30%);
-@fg_main: #333;
-@fg_highlight: #4FA97B;
-@fg_header: #4FA97B;
-@fg_sitename: #333;
-@bg_menu-item: rgba(200, 200, 200, .8);
 
-@border: @fg_main;
+@orange: #FDA333;
+@darkgrey: #333333;
+@grey: #5D5D5D;
+@lightgrey: #999999;
+
+@darktext: #414141;
+@text: @darkgrey;
+@greytext: @grey;
+@lighttext: @lightgrey;
+
 
 body {
     background-color: @bg_main;
@@ -26,9 +19,8 @@ body {
     }
 }
 #preamble {
-    background: url(../images/blueprint.png) no-repeat 350px 0;
     color: @fg_sitename;
-    font-family: Consolas, monospace;
+    font-family: OpenSans;
     font-size: 3.6em;
     padding: 15px .5em;
     border-bottom: .1em solid @border;
@@ -37,7 +29,7 @@ body {
 
 h1 {
     color: @fg_header;
-    font-family: Consolas, monospace;
+    font-family: OpenSans;
     font-size: 2em;
     border-right: 1px solid @border;
     float: left;
