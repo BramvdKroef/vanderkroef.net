@@ -26,22 +26,68 @@
               <ul>
                 <li><a href="mailto:bram@vanderkroef.net">bram@vanderkroef.net</a></li>
                 <li><a href="/files/resume.pdf">Résumé</a></li>
+                <li><a href="http://www.linkedin.com/pub/bram-van-der-kroef/35/789/27">LinkedIn</a></li>
+                <li><a href="https://github.com/BramvdKroef">Github</a></li>
               </ul>
             </nav>
         </header>
         
         <section id="content">
-          <p>I am a full-stack developer who lives in Fort Frances, Ontario. My
-            work includes module/plugin and theme development for
-            Drupal and Wordpress sites. I have built over a hundred
-            websites using Drupal and Wordpress.  I develop and
-            maintain Web applications using technologies such as PHP,
-            Python, MySQL, jQuery, CakePHP. I also have a background
+          <p>I am a full-stack developer who lives in Fort Frances,
+            Ontario.
+
+            My work includes module/plugin and theme development for
+            <span class="drupal">Drupal</span>
+            and <span class="wordpress">Wordpress</span>. I have built
+            and maintained over a hundred websites with custom themes.
+
+            I develop and maintain Web applications using technologies
+            such
+            as <span class="php">PHP</span>, <span class="python">Python</span>,
+            <span class="mysql">MySQL</span>, <span class="jquery">jQuery</span>,
+            <span class="cakephp">CakePHP</span>, <span class="bootstrap">Bootstrap</span>,
+            <span class="less">LESS</span>. I also have a background
             in network programming and operating systems.</p>
 
           <p>Check out some of my work below and browse through the
             code on github.</p>
-          
+
+          <h2>CLESSC</h2>
+          <div class="subtitle">LESS Compiler in C++</div>
+
+          <div class="description">
+          <p>LESS is an extension for CSS that adds variables, nested
+            rules, functions and operations to make style-sheets
+            easier to write. CLESSC compiles LESS code to CSS.</p>
+          </div>
+          <div class="aside">
+            <code class="input">
+              .button (@bg, @fg) {
+                  background: linear-gradient(@bg, darken(@bg, 10%));
+                  color: @fg;
+                  border-radius: 10px;
+                  &:hover {
+                    background: linear-gradient(darken(@bg, 10%), @bg);
+                    color: lighten(@fg, 10%);
+                  }
+              }
+              .green-button {
+                 .button(green, white);
+              }
+            </code>
+            <code class="result">
+              
+            </code>
+          </div>
+
+          <h2>Genetic Algorithm</h2>
+          <p>This project tries to solve the Traveling Salesman
+            Problem using a genetic algorithm.</p>
+          <div class="aside">
+            <img src="/images/map.svg" />
+            <div class="caption">Three solutions the algorithm goes
+            through to get to an optimal path.</div>
+          </div>
         </section>
     </body>
 </html>
