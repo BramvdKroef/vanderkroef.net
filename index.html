@@ -1,41 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<html lang="en">
     <head>
         <title>Bram van der Kroef</title>
 
         <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <meta  name="author" content="{{author}}" />
-        <link rel="stylesheet" href="/css/style.css" type="text/css"
+        <link rel="stylesheet" href="css/style.css" type="text/css"
               media="screen, projection"/>
-        <link rel="stylesheet" href="/css/print.css" type="text/css"
+        <link rel="stylesheet" href="css/print.css" type="text/css"
               media="print"/> 
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro"
+              rel="stylesheet" />
+        <link rel="stylesheet" href="css/highlight.css" />
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
     <body>
         <header id="preamble">
-            <div class="site-name">{{sitename}}</div>
+            <h1 class="site-name">Bram <strong>van der Kroef</strong></h1>
             <nav id="navigation">
               <ul>
-                <li><a href="mailto:bram@vanderkroef.net">bram@vanderkroef.net</a></li>
-                <li><a href="/files/resume.pdf">Résumé</a></li>
-                <li><a href="http://www.linkedin.com/pub/bram-van-der-kroef/35/789/27">LinkedIn</a></li>
-                <li><a href="https://github.com/BramvdKroef">Github</a></li>
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  <a href="mailto:bram@vanderkroef.net">bram@vanderkroef.net</a></li>
+                <li><i class="fa fa-file-alt"></i>
+                  <a href="/files/resume.pdf">Résumé</a></li>
+                <li><i class="fab fa-linkedin"></i>
+                  <a href="http://www.linkedin.com/pub/bram-van-der-kroef/35/789/27">
+                    LinkedIn</a></li>
+                <li><i class="fab fa-github-square"></i>
+                  <a href="https://github.com/BramvdKroef">
+                    Github</a></li>
               </ul>
             </nav>
         </header>
-        
-        <section id="content">
-          <p>I am a full-stack developer who lives in Fort Frances,
-            Ontario.
 
-            My work includes module/plugin and theme development for
+        <section>
+          <p>I am a full-stack developer who lives in Fort Frances,
+            Ontario.</p>
+
+          <p>My work includes module/plugin and theme development for
             <span class="drupal">Drupal</span>
             and <span class="wordpress">Wordpress</span>. I have built
-            and maintained over a hundred websites with custom themes.
+            and maintained over a hundred websites with custom themes.</p>
 
-            I develop and maintain Web applications using technologies
+          <p>I develop and maintain Web applications using technologies
             such
             as <span class="php">PHP</span>, <span class="python">Python</span>,
             <span class="mysql">MySQL</span>, <span class="jquery">jQuery</span>,
@@ -46,42 +55,56 @@
           <p>Check out some of my work below and browse through the
             code on github.</p>
 
-          <h2>CLESSC</h2>
-          <div class="subtitle">LESS Compiler in C++</div>
+          <article>
+            <header>
+            <h2>CLESSC</h2>
+            <div class="subtitle">LESS Compiler in C++</div>
+            </header>
+            
+            <section class="description">
+              <p>LESS is an extension for CSS that adds variables, nested
+                rules, functions and operations to make stylesheets
+                easier to write. CLESSC compiles LESS code to CSS.</p>
+            </section>
+            <aside>
+              <pre><code class="input less">
+.button (@bg, @fg) {
+   background: linear-gradient(@bg, darken(@bg, 10%));
+   color: @fg;
+   border-radius: 10px;
+   &:hover {
+      background: linear-gradient(darken(@bg, 10%), @bg);
+      color: lighten(@fg, 10%);
+   }
+}
+.green-button {
+   .button(green, white);
+}
+              </code></pre>
+              <pre><code class="result">
+                
+              </code></pre>
+            </aside>
+          </article>
 
-          <div class="description">
-          <p>LESS is an extension for CSS that adds variables, nested
-            rules, functions and operations to make style-sheets
-            easier to write. CLESSC compiles LESS code to CSS.</p>
-          </div>
-          <div class="aside">
-            <code class="input">
-              .button (@bg, @fg) {
-                  background: linear-gradient(@bg, darken(@bg, 10%));
-                  color: @fg;
-                  border-radius: 10px;
-                  &:hover {
-                    background: linear-gradient(darken(@bg, 10%), @bg);
-                    color: lighten(@fg, 10%);
-                  }
-              }
-              .green-button {
-                 .button(green, white);
-              }
-            </code>
-            <code class="result">
-              
-            </code>
-          </div>
-
-          <h2>Genetic Algorithm</h2>
-          <p>This project tries to solve the Traveling Salesman
-            Problem using a genetic algorithm.</p>
-          <div class="aside">
-            <img src="/images/map.svg" />
-            <div class="caption">Three solutions the algorithm goes
-            through to get to an optimal path.</div>
-          </div>
+          <article>
+            <header>
+              <h2>Genetic Algorithm</h2>
+            </header>
+            <section class="description">
+              <p>This project tries to solve the Traveling Salesman
+                Problem using a genetic algorithm.</p>
+            </section>
+            
+            <aside>
+              <img src="images/map.svg" width="300" height="250" />
+              <div class="caption">Three solutions the algorithm goes
+                through to get to an optimal path.</div>
+            </aside>
+          </article>
         </section>
+        <script src="js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
     </body>
 </html>
